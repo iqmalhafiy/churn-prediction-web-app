@@ -48,7 +48,7 @@ def show_visualization_page():
 
     fig3.update_layout(height=700, width=900)
     st.write("""### Distribution of Dependant counts""")
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig3, use_container_width=True)
     
     # Customers' Education Level
     fig4 = plt.figure(figsize=(13,4),dpi=200)
@@ -96,7 +96,7 @@ def show_visualization_page():
 
     fig9.update_layout(height=700, width=1000)
     st.write("""### Distribution of the Credit Limit""")
-    st.plotly_chart(fig9, use_container_width=True)
+    st.plotly_chart(fig9)
     
     # Proportion of Churn vs Not Churn Customers
     fig10 = px.pie(df,names='Attrition_Flag', hole=0.43)
