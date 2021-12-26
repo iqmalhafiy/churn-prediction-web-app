@@ -19,7 +19,7 @@ def load_data():
 df = load_data()
 
 def show_visualization_page():
-    st.title("Explore Bank's Customers Data")
+    st.title("Explore Customers Data")
     
     # Distribution of Customers Age
     fig = make_subplots(rows=2, cols=1)
