@@ -20,7 +20,7 @@ def show_predict_page():
     
     #Gender
     gender = ("M", "F")
-    gender = st.selectbox("Select gender:", gender)
+    gender = st.selectbox("Select gender: (M = Male and F = Female)", gender)
     #Age
     age = st.slider("Enter age:", min_value=18, max_value=100, value=18)
     # Total Transaction Count
@@ -32,7 +32,7 @@ def show_predict_page():
     # Total_Relationship_Count
     Total_Relationship_Count = st.number_input("Enter the total number of products held by the customer:", step=1)
     
-    ok = st.button("Predict churning")
+    ok = st.button("Predict")
     if ok:
         X = np.array([[gender, age, Total_Trans_Ct, Total_Revolving_Bal, Total_Trans_Amt, Total_Relationship_Count]])
         X[:, 0] = le_gender.transform(X[:,0])
