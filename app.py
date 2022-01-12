@@ -13,4 +13,4 @@ else:
 
 userguide = '[User Guide](https://docs.google.com/document/d/1aGkYQK2eoN_S3ZZ8LNSHj-YXn1-2MAASmOmL5FV1UYQ/edit?usp=sharing)'
 st.sidebar.text("For user guideline visit:")
-st.sidebar.write(userguide)
+st.sidebar.markdown(userguide)
