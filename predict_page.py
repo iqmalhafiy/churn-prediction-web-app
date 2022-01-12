@@ -14,23 +14,24 @@ le_gender = data["le_gender"]
 scaler = data["scaler"]
 
 def show_predict_page():
-    st.title("Customer Churn Prediction")
+    st.title("Churnzy")
+    st.text("""Predict your customer loyalty as fast as possible""")
     
-    st.subheader(""" Fill in the customer informations""")
+    st.write("""#### Fill in the customer informations""")
     
     #Gender
     gender = ("M", "F")
-    gender = st.selectbox("Select gender: (M = Male and F = Female)", gender)
+    gender = st.selectbox("Select gender:", gender, help='M for Male and F for Female')
     #Age
-    age = st.slider("Enter age:", min_value=18, max_value=100, value=18)
+    age = st.slider("Enter age:", min_value=21, max_value=100)
     # Total Transaction Count
-    Total_Trans_Ct = st.number_input("Enter total transaction count in last 12 months:", step=1)
+    Total_Trans_Ct = st.number_input("Enter the total transaction count in last 12 months:", value=10, step=10, help='The total of transactions made for the last 12 months')
     # Total_Revolving_Bal
-    Total_Revolving_Bal = st.number_input("Enter the total revolving balance on the credit card:", step=1)
+    Total_Revolving_Bal = st.number_input("Enter the total revolving balance on the credit card:", step=10, help='The revolving credit card balance')
     # Total_Trans_Amt
-    Total_Trans_Amt = st.number_input("Enter the total transaction amount in last 12 months:", step=1)
+    Total_Trans_Amt = st.number_input("Enter the total transaction amount in last 12 months:", value=700, step=10, help='The total transaction amount made for the last 12 months')
     # Total_Relationship_Count
-    Total_Relationship_Count = st.number_input("Enter the total number of products held by the customer:", step=1)
+    Total_Relationship_Count = st.number_input("Enter the total number of products held by the customer:", 1, 6, step=1)
     
     ok = st.button("Predict")
     if ok:
@@ -43,5 +44,7 @@ def show_predict_page():
             st.subheader(f"The customer is predicted to CHURN.")
         else:
             st.subheader(f"The customer is predicted to STAY.")
+            
+        
         
         
